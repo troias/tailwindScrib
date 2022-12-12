@@ -12,11 +12,14 @@ function App() {
         </div> */}
       </header>
       <body className="bg-white/40 ">
-        <div className="h-screen w-full">
+        <div className=" w-full lg:px-12">
           <HeroSection />
           <SpeakersSection />
         </div>
       </body>
+      <footer className="flex">
+        <FooterSection />
+      </footer>
     </div>
   )
 }
@@ -93,29 +96,6 @@ function MobileNavbar() {
   )
 }
 
-const DeskTopNavBar = () => {
-  return (
-    <nav className="flex justify-between items-center py-4 px-6 bg-transparent border-b-4 border-purple  ">
-      <div className="flex items-center">
-        <div className="w-2 h-2 bg-purple rounded-full mr-3"></div>
-        <div className="w-2 h-2 bg-purple rounded-full mr-3"></div>
-        <div className="w-2 h-2 bg-purple rounded-full mr-3"></div>
-      </div>
-      <div className="text-2xl font-bold text-purple uppercase">
-        Design+Code
-      </div>
-      <div className="flex items-center">
-        <button className="bg-purple text-white rounded-full py-2 px-4 text-xs uppercase font-bold mr-3">
-          Log in
-        </button>
-        <button className=" rounded-full text-white py-2 px-4 text-xs uppercase font-bold border-2 border-purple bg-tahiti-blue">
-          Sign up
-        </button>
-      </div>
-    </nav>
-  )
-}
-
 const HeroSection = () => {
   return (
     <div class=" flex  ">
@@ -130,17 +110,17 @@ const HeroSection = () => {
             Mountains.
           </h1>
         </div>
-        <div className="grid gap-4 grid-flow-row md:grid-flow-col border-t border-gray-800 border-opacity-20   py-2 font-semibold bg-white/10">
+        <div className="grid gap-2 grid-flow-row md:grid-flow-col border-t border-gray-800 border-opacity-20   py-2 font-semibold bg-white/10">
           <div>
-            <h5 className="font-bold">Date</h5>
+            <h5 className="font-bold py-2">Date</h5>
             September 5-7 2001
           </div>
           <div>
-            <h5 className="font-bold">Venue</h5>
+            <h5 className="font-bold py-2">Venue</h5>
             Waikato University
           </div>
           <div>
-            <h5 className="font-bold">Online</h5>
+            <h5 className="font-bold py-2">Online</h5>
             World wide at 8AM EST
           </div>
         </div>
@@ -165,8 +145,8 @@ const HeroSection = () => {
 
 const SpeakersSection = () => {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 px-8 py-6">
-      <div className="flex flex-col justify-center">
+    <div className="grid grid-cols-1 md:g-cols-2 lg:gap-4 gap-2 px-8 py-6">
+      <div className="grid justify-center ">
         <h2 className="text-2xl font-bold text-purple py-2">Speakers</h2>
         <p className="font-sataoshi-bold text-sm">
           Lorem Ipsum is simply dummy text of the printing and typesetting
@@ -175,31 +155,158 @@ const SpeakersSection = () => {
           scrambled it to make a type specimen book.
         </p>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <div className="flex flex-col justify-center">
-          <img
-            src="
-            https://unsplash.com/photos/4ZF5cV50QPM
-            "
-            alt="speaker"
-            className="rounded-full"
-          />
-          <h3 className="text-purple font-bold text-lg">Speaker 1</h3>
-          <p className="text-gray-400 text-sm">Lorem Ipsum</p>
+      <div className="grid lg:grid-cols-4 ">
+        <div className="lg:grid grid-rows-3 w-1/3 px-4 h-2/3 hidden">
+          <div>
+            <h5>day 1</h5>
+            <h4 className="text-purple text-lg font-bold border-b-2 border-purple">
+              Septermber 5
+            </h4>
+          </div>
+          <div>
+            <h5>day 1</h5>
+            <h4 className="text-purple text-lg font-bold">Septermber 5</h4>
+          </div>
+          <div>
+            <h5>day 1</h5>
+            <h4 className="text-purple text-lg font-bold">Septermber 5</h4>
+          </div>
         </div>
-        <div className="flex flex-col justify-center">
-          <img
-            src="https://images.unsplash.com/photo-1517436073-3b1b1f7d4d9a?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8c3BlYWtlcnxlbn
-            wxbHlwaGljb258ZW58MHx8MHx8&ixlib=rb-1.2.1&w=1000&q=80"
-            alt="speaker"
-            className="rounded-full
-              w-40
-              h-40
-            "
-          />
-          <h3 className="text-purple font-bold text-lg">Speaker 2</h3>
 
-          <p className="text-gray-400 text-sm">Lorem Ipsum</p>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3  mobile:grid-cols-2 gap-4 place-items-center lg:col-span-3">
+          <div className="grid  justify-center  lg:grid-cols-3 ">
+            <div className="py-2 lg:order-2 ">
+              <h3 className="text-purple font-bold text-lg">Speaker 1</h3>
+              <p className="text-black font-sataoshi text-sm">Lorem Ipsum</p>
+            </div>
+
+            <div className="py-2 border-t-purple/50 border-t-2 lg:border-0  lg:col-span-3">
+              <img
+                src="
+            https://source.unsplash.com/4ZF5cV50QPM/300x300
+            "
+                alt="speaker"
+                className=" w-full h-40 my-2 aspect-square rounded"
+              />
+            </div>
+          </div>
+
+          <div className="grid  justify-center  lg:grid-cols-3 ">
+            <div className="py-2 lg:order-2 ">
+              <h3 className="text-purple font-bold text-lg">Speaker 1</h3>
+              <p className="text-black font-sataoshi text-sm">Lorem Ipsum</p>
+            </div>
+
+            <div className="py-2 border-t-purple/50 border-t-2 lg:border-0  lg:col-span-3">
+              <img
+                src="
+            https://source.unsplash.com/4ZF5cV50QPM/300x300
+            "
+                alt="speaker"
+                className=" w-full h-40 my-2 aspect-square rounded"
+              />
+            </div>
+          </div>
+          <div className="grid  justify-center  lg:grid-cols-3 ">
+            <div className="py-2 lg:order-2 ">
+              <h3 className="text-purple font-bold text-lg">Speaker 1</h3>
+              <p className="text-black font-sataoshi text-sm">Lorem Ipsum</p>
+            </div>
+
+            <div className="py-2 border-t-purple/50 border-t-2 lg:border-0  lg:col-span-3">
+              <img
+                src="
+            https://source.unsplash.com/4ZF5cV50QPM/300x300
+            "
+                alt="speaker"
+                className=" w-full h-40 my-2 aspect-square rounded"
+              />
+            </div>
+          </div>
+          <div className="grid  justify-center  lg:grid-cols-3 ">
+            <div className="py-2 lg:order-2 ">
+              <h3 className="text-purple font-bold text-lg">Speaker 1</h3>
+              <p className="text-black font-sataoshi text-sm">Lorem Ipsum</p>
+            </div>
+
+            <div className="py-2 border-t-purple/50 border-t-2 lg:border-0  lg:col-span-3">
+              <img
+                src="
+            https://source.unsplash.com/4ZF5cV50QPM/300x300
+            "
+                alt="speaker"
+                className=" w-full h-40 my-2 aspect-square rounded"
+              />
+            </div>
+          </div>
+          <div className="grid  justify-center  lg:grid-cols-3 ">
+            <div className="py-2 lg:order-2 ">
+              <h3 className="text-purple font-bold text-lg">Speaker 1</h3>
+              <p className="text-black font-sataoshi text-sm">Lorem Ipsum</p>
+            </div>
+
+            <div className="py-2 border-t-purple/50 border-t-2 lg:border-0  lg:col-span-3">
+              <img
+                src="
+            https://source.unsplash.com/4ZF5cV50QPM/300x300
+            "
+                alt="speaker"
+                className=" w-full h-40 my-2 aspect-square rounded"
+              />
+            </div>
+          </div>
+          <div className="grid  justify-center  lg:grid-cols-3 ">
+            <div className="py-2 lg:order-2 ">
+              <h3 className="text-purple font-bold text-lg">Speaker 1</h3>
+              <p className="text-black font-sataoshi text-sm">Lorem Ipsum</p>
+            </div>
+
+            <div className="py-2 border-t-purple/50 border-t-2 lg:border-0  lg:col-span-3">
+              <img
+                src="
+            https://source.unsplash.com/4ZF5cV50QPM/300x300
+            "
+                alt="speaker"
+                className=" w-full h-40 my-2 aspect-square rounded"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+const FooterSection = () => {
+  return (
+    <div className="bg-white h-96 py-4">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 px-8 py-6">
+        <div className="grid justify-center">
+          <h2 className="text-2xl font-bold text-purple py-2">About Us</h2>
+          <p className="font-sataoshi-bold text-sm">
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry. Lorem Ipsum has been the industry's standard dummy text
+            ever since the 1500s, when an unknown printer took a galley of type
+            and scrambled it to make a type specimen book.
+          </p>
+        </div>
+        <div className="grid justify-center">
+          <h2 className="text-2xl font-bold text-purple py-2">Contact Us</h2>
+          <p className="font-sataoshi-bold text-sm">
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry. Lorem Ipsum has been the industry's standard dummy text
+            ever since the 1500s, when an unknown printer took a galley of type
+            and scrambled it to make a type specimen book.
+          </p>
+        </div>
+        <div className="grid justify-center">
+          <h2 className="text-2xl font-bold text-purple py-2">Follow Us</h2>
+          <p className="font-sataoshi-bold text-sm">
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry. Lorem Ipsum has been the industry's standard dummy text
+            ever since the 1500s, when an unknown printer took a galley of type
+            and scrambled it to make a type specimen book.
+          </p>
         </div>
       </div>
     </div>
